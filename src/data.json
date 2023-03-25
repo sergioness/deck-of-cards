@@ -1,0 +1,23 @@
+{
+    "suits": [
+      { "id": 1, "label": "Spades", "value": "♠" },
+      { "id": 2, "label": "Hearts", "value": "♥" },
+      { "id": 3, "label": "Diamonds", "value": "♦" },
+      { "id": 4, "label": "Clubs", "value": "♣" }
+    ],
+    "values": [
+      { "id": 1, "label": "Ace", "value": "A" },
+      { "id": 2, "label": "Two", "value": "2" },
+      { "id": 3, "label": "Three", "value": "3" },
+      { "id": 4, "label": "Four", "value": "4" },
+      { "id": 5, "label": "Five", "value": "5" },
+      { "id": 6, "label": "Six", "value": "6" },
+      { "id": 7, "label": "Seven", "value": "7" },
+      { "id": 8, "label": "Eight", "value": "8" },
+      { "id": 9, "label": "Nine", "value": "9" },
+      { "id": 10, "label": "Ten", "value": "10" },
+      { "id": 11, "label": "Jack", "value": "J" },
+      { "id": 12, "label": "Queen", "value": "Q" },
+      { "id": 13, "label": "King", "value": "K" }
+    ]
+}
