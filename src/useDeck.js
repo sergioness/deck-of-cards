@@ -1,10 +1,10 @@
 import { useMemo, useState } from "react";
 import { getNewDeck } from "./api";
-import { insertCardIntoDeck } from './utils';
+import { compareCards, deepCopyDeck } from './utils';
 
 function getShuffleDeck(deck, setDeck) {
     return function () {
-        const newDeck = Array.from(deck, card => ({ ...card }));
+        const newDeck = deepCopyDeck(deck);
         for (let m = newDeck.length, i = Number.parseInt(Math.random() * m--);
             m;
             m--, i = Math.floor(Math.random() * m)
@@ -17,10 +17,8 @@ function getShuffleDeck(deck, setDeck) {
 
 function getSortDeck(deck, setDeck) {
     return function () {
-        const newDeck = [];
-        for (const card of deck) {
-            insertCardIntoDeck(card, newDeck);
-        }
+        const newDeck = deepCopyDeck(deck);
+        newDeck.sort(compareCards);
         setDeck(newDeck);
     };
 }

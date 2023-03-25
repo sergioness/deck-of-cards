@@ -1,15 +1,13 @@
-
-function isCardLessSignificantThanAnother(card1, card2) {
-    return card1.value > card2.value;
+function deepCopyCard(card) {
+    return { ...card };
 }
 
-export function insertCardIntoDeck(card, deck) {
-    const position = 0;
-    if (!deck[position]) {
-        deck.splice(position, 0, card);
-    } else {
-        isCardLessSignificantThanAnother(deck[position], card) ?
-            insertCardIntoDeck(card, deck.slice(0, position)) :
-            insertCardIntoDeck(card, deck.slice(position + 1));
-    }
+export function deepCopyDeck(deck) {
+    return Array.from(deck, deepCopyCard);
+}
+
+export function compareCards(card1, card2) {
+    return card1.id.suit === card2.id.suit ?
+                card1.id.value < card2.id.value ? -1 : 1 :
+            card1.id.suit < card2.id.suit ? -1 : 1
 }
